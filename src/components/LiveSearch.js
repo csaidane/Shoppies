@@ -1,7 +1,5 @@
 import React, { Fragment, useState, useEffect, useRef } from "react";
 
-import { differenceInDays } from "date-fns";
-
 import axios from "axios";
 
 import SearchBar from "./SearchBar";
@@ -42,23 +40,17 @@ export default function LiveSearch(props) {
   
       axios
         .get(
-          `https://itunes.apple.com/search?term=${search.term}&country=CA&media=music&entity=album&attribute=artistTerm`
+          `http://www.omdbapi.com/?s=${search.term}&apikey=714fbc7e`
         )
-        .then(response => {
-          response.data.results.sort((a, b) => {
-            return differenceInDays(
-              new Date(b.releaseDate),
-              new Date(a.releaseDate)
-            );
-          });
-  
+        .then(response => {  
           setSearch(search => ({
             ...search,
-            results: response.data.results,
+            results: response.data,
             loading: false
           }));
         })
         .catch(error => {
+            console.log(error)
             showError();
           });
     }, [search.term]);

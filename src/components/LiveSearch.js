@@ -43,12 +43,20 @@ export default function LiveSearch(props) {
         .get(
           `http://www.omdbapi.com/?s=${search.term}&apikey=714fbc7e`
         )
-        .then(response => {  
-          setSearch(search => ({
-            ...search,
-            results: response.data,
-            loading: false
-          }));
+        .then(response => {
+          if(response.data.Response === "True"){
+            setSearch(search => ({
+              ...search,
+              results: response.data,
+              loading: false
+            }));
+          } else{
+            setSearch(search => ({
+              ...search,
+              results: {Response: "False", totalResults:"0", Search: []},
+              loading: false
+            }));
+          }  
         })
         .catch(error => {
             console.log(error)
@@ -59,7 +67,7 @@ export default function LiveSearch(props) {
     return (
       <Fragment>
         <header className="logo">
-        <img src="./images/movie.png" alt="Logo" />
+        <img src="./images/movie (2).png" alt="Logo" />
       </header>
         <main>
           <SearchBar
@@ -69,7 +77,7 @@ export default function LiveSearch(props) {
           <Error show={error} onClose={event => setError(false)}>
           The API has returned an error.
         </Error>
-        {/* <Results results={search.results} /> */}
+        <Results results={search.results} />
         </main>
       </Fragment>
     );

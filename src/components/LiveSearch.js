@@ -58,6 +58,9 @@ export default function LiveSearch(props) {
   
     return (
       <Fragment>
+        <header className="logo">
+        <img src="./images/movie.png" alt="Logo" />
+      </header>
         <main>
           <SearchBar
             loading={search.loading}
@@ -66,7 +69,7 @@ export default function LiveSearch(props) {
           <Error show={error} onClose={event => setError(false)}>
           The API has returned an error.
         </Error>
-        <Results results={search.results} />
+        {/* <Results results={search.results} /> */}
         </main>
       </Fragment>
     );

@@ -97,3 +97,36 @@ section {
   height: 2rem;
 }
 
+
+.movie {
+  display: flex;
+  color: #fefefe;
+  margin-bottom: 0.5rem;
+}
+
+.movie__thumbnail {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  width: 100.5px;
+  height: 150px;
+}
+
+.movie__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding-left: 1rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background: #201f2f;
+  overflow: hidden;
+}
+
+.movie__title {
+  font-weight: 700;
+}
+
+.movie__year {
+  font-size: 1.2rem;
+}

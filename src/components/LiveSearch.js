@@ -4,6 +4,7 @@ import axios from "axios";
 
 import SearchBar from "./SearchBar";
 import Error from "./Error";
+import Results from "./Results";
 
 
 export default function LiveSearch(props) {
@@ -63,8 +64,9 @@ export default function LiveSearch(props) {
             onSearch={term => setSearch({ ...search, term })}
           />
           <Error show={error} onClose={event => setError(false)}>
-          The server returned an error.
+          The API has returned an error.
         </Error>
+        <Results results={search.results} />
         </main>
       </Fragment>
     );

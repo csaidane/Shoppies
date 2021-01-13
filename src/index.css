@@ -51,6 +51,15 @@ section {
 .logo {
   display: flex;
   justify-content: center;
+  color: white;
+  font-size: large;
+}
+
+.intro{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .radius {
@@ -111,16 +120,28 @@ section {
   height: 150px;
 }
 
-.movie__info {
+/* .nominate-button{
+  height: 20%;
+} */
+
+.movie__interaction{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.movie__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 50%;
   padding-left: 1rem;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   background: #201f2f;
   overflow: hidden;
+  padding-right: 30px;
 }
 
 .movie__title {

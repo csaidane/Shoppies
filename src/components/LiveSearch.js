@@ -10,9 +10,11 @@ import Results from "./Results";
 export default function LiveSearch(props) {
     const [search, setSearch] = useState({
       term: "",
-      results: [],
+      results: {Response: "False", totalResults:"0", Search: []},
       loading: false
     });
+
+    const [nominations, setNominations] = useState([]);
   
     const [error, setError] = useState(false);
   
@@ -70,6 +72,7 @@ export default function LiveSearch(props) {
         <img src="./images/movie (2).png" alt="Logo" />
       </header>
         <main>
+          <h1 className="intro">Shoppies Search</h1>
           <SearchBar
             loading={search.loading}
             onSearch={term => setSearch({ ...search, term })}
@@ -77,7 +80,7 @@ export default function LiveSearch(props) {
           <Error show={error} onClose={event => setError(false)}>
           The API has returned an error.
         </Error>
-        <Results results={search.results} />
+        <Results results={search.results} nominations={nominations} setNominations={setNominations} />
         </main>
       </Fragment>
     );

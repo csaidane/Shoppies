@@ -6,6 +6,6 @@ export default function Results(props) {
 
   return results.Search
     .map(movie => {
-      return <Movie key={movie.imdbID} {...movie} />;
+      return <Movie key={movie.imdbID} {...movie} nominations={props.nominations} setNominations={props.setNominations}/>;
     });
 }

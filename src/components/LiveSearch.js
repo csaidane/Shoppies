@@ -79,8 +79,8 @@ export default function LiveSearch(props) {
             loading={search.loading}
             onSearch={term => setSearch({ ...search, term })}
           />
-          {nominations.length===5 && <Banner></Banner>}
           <NominationDisplay results={nominations} nominations={nominations} setNominations={setNominations}></NominationDisplay>
+          {nominations.length===5 && <Banner></Banner>}
           <Error show={error} onClose={event => setError(false)}>
           The API has returned an error.
         </Error>

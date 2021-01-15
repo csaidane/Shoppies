@@ -26,7 +26,7 @@ export default function SimpleCard() {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.root}>
+    <Card className="Banner">
       <CardContent>
         <Typography variant="body2" component="p">
           You have 5 movies in your nominations. You can review them to make sure you're happy with your choice.

@@ -45,7 +45,7 @@ export default function LiveSearch(props) {
   
       axios
         .get(
-          `http://www.omdbapi.com/?s=${search.term}&apikey=714fbc7e`
+          `https://www.omdbapi.com/?s=${search.term}&apikey=714fbc7e`
         )
         .then(response => {
           if(response.data.Response === "True"){
